@@ -9,14 +9,13 @@ const LINKS = [
 ];
 
 const NavBar = () => {
-    console.log("render");
     return (
         <>
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
                 <div className='container'>
-                    <a className='navbar-brand' href='/'>
-                        <img src={Logo} alt='show' width='32' height='32' />
-                        <span className='m-2'>Fooders</span>
+                    <a className='navbar-brand ms-2' href='/'>
+                        <img src={Logo} alt='show' width='34' height='34' />
+                        <span className='ms-2 fw-bold text-success'>Fooders</span>
                     </a>
                     <button
                         className='navbar-toggler'
@@ -38,7 +37,7 @@ const NavBar = () => {
                                 <li key={item.to} className='nav-item'>
                                     <Link
                                         to={item.to}
-                                        className='nav-link active m-sm-2 m-1'
+                                        className='nav-link active ms-sm-2 me-sm-2 m-1'
                                     >
                                         {item.text}
                                     </Link>
@@ -46,7 +45,7 @@ const NavBar = () => {
                             ))}
                             <li className='nav-item'>
                                 <button
-                                    className='btn btn-success m-sm-2 m-1'
+                                    className='btn btn-success ms-sm-2 me-sm-2 m-1'
                                     type='button'
                                 >
                                     Login
@@ -54,7 +53,7 @@ const NavBar = () => {
                             </li>
                             <li className='nav-item'>
                                 <button
-                                    className='btn btn-outline-success m-sm-2 m-1'
+                                    className='btn btn-outline-success ms-sm-2 m-1'
                                     type='submit'
                                 >
                                     Create Account
