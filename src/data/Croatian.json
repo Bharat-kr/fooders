@@ -1,0 +1,44 @@
+{
+  "meals": [
+    {
+      "strMeal": "Burek",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg",
+      "idMeal": "53060"
+    },
+    {
+      "strMeal": "Cevapi Sausages",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/vc08jn1628769553.jpg",
+      "idMeal": "53055"
+    },
+    {
+      "strMeal": "Croatian Bean Stew",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/tnwy8m1628770384.jpg",
+      "idMeal": "53058"
+    },
+    {
+      "strMeal": "Croatian lamb peka",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/pn59o51628769837.jpg",
+      "idMeal": "53056"
+    },
+    {
+      "strMeal": "Fresh sardines",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/nv5lf31628771380.jpg",
+      "idMeal": "53061"
+    },
+    {
+      "strMeal": "Mushroom soup with buckwheat",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/1ngcbf1628770793.jpg",
+      "idMeal": "53059"
+    },
+    {
+      "strMeal": "Traditional Croatian Goulash",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/n1hcou1628770088.jpg",
+      "idMeal": "53057"
+    },
+    {
+      "strMeal": "Walnut Roll Gužvara",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/u9l7k81628771647.jpg",
+      "idMeal": "53062"
+    }
+  ]
+}

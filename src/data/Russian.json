@@ -1,0 +1,9 @@
+{
+  "meals": [
+    {
+      "strMeal": "Beef stroganoff",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/svprys1511176755.jpg",
+      "idMeal": "52834"
+    }
+  ]
+}

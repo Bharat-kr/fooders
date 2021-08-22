@@ -1,0 +1,44 @@
+{
+  "meals": [
+    {
+      "strMeal": "Egyptian Fatteh",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/rlwcc51598734603.jpg",
+      "idMeal": "53031"
+    },
+    {
+      "strMeal": "Feteer Meshaltet",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/9f4z6v1598734293.jpg",
+      "idMeal": "53030"
+    },
+    {
+      "strMeal": "Ful Medames",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/lvn2d51598732465.jpg",
+      "idMeal": "53025"
+    },
+    {
+      "strMeal": "Koshari",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg",
+      "idMeal": "53027"
+    },
+    {
+      "strMeal": "Mulukhiyah",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/x372ug1598733932.jpg",
+      "idMeal": "53029"
+    },
+    {
+      "strMeal": "Shakshuka",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/g373701551450225.jpg",
+      "idMeal": "52963"
+    },
+    {
+      "strMeal": "Shawarma",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/kcv6hj1598733479.jpg",
+      "idMeal": "53028"
+    },
+    {
+      "strMeal": "Tamiya",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/n3xxd91598732796.jpg",
+      "idMeal": "53026"
+    }
+  ]
+}

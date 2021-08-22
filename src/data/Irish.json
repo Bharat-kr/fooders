@@ -1,0 +1,44 @@
+{
+  "meals": [
+    {
+      "strMeal": "Boxty Breakfast",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/naqyel1608588563.jpg",
+      "idMeal": "53036"
+    },
+    {
+      "strMeal": "Coddled pork with cider",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/7vpsfp1608588991.jpg",
+      "idMeal": "53037"
+    },
+    {
+      "strMeal": "Corned Beef and Cabbage",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/xb97a81583266727.jpg",
+      "idMeal": "52998"
+    },
+    {
+      "strMeal": "Crispy Sausages and Greens",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/st1ifa1583267248.jpg",
+      "idMeal": "52999"
+    },
+    {
+      "strMeal": "Ham hock colcannon",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg",
+      "idMeal": "53035"
+    },
+    {
+      "strMeal": "Irish stew",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/sxxpst1468569714.jpg",
+      "idMeal": "52781"
+    },
+    {
+      "strMeal": "Mustard champ",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/o7p9581608589317.jpg",
+      "idMeal": "53038"
+    },
+    {
+      "strMeal": "Vegetable Shepherd’s Pie",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/w8umt11583268117.jpg",
+      "idMeal": "53000"
+    }
+  ]
+}

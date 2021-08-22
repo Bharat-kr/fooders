@@ -1,0 +1,19 @@
+{
+  "meals": [
+    {
+      "strMeal": "Roast fennel and aubergine paella",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/1520081754.jpg",
+      "idMeal": "52942"
+    },
+    {
+      "strMeal": "Seafood fideuà",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/wqqvyq1511179730.jpg",
+      "idMeal": "52836"
+    },
+    {
+      "strMeal": "Spanish Tortilla",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/quuxsx1511476154.jpg",
+      "idMeal": "52872"
+    }
+  ]
+}
