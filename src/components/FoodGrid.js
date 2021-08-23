@@ -92,14 +92,13 @@ const FoodGrid = ({ name }) => {
         data = Tunisian.meals;
     }
     var id = `#${name}`;
-    console.log(id);
 
     return (
         <div className='container mt-5 mb-5'>
-            <div className="container d-flex flex-row justify-content-between">
+            <div className='container d-flex flex-row justify-content-between'>
                 <h2>{name}</h2>
                 <button
-                    classname='btn'
+                    className='btn btn-success'
                     type='button'
                     data-bs-toggle='collapse'
                     data-bs-target={id}
@@ -110,7 +109,7 @@ const FoodGrid = ({ name }) => {
                 </button>
             </div>
 
-            <div className='container d-flex flex-wrap justify-content-center'>
+            <div className='container d-flex flex-wrap justify-content-evenly mt-1'>
                 {data.slice(0, 5).map((a) => {
                     return (
                         <FoodCard

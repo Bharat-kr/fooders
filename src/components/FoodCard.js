@@ -8,13 +8,17 @@ const FoodCard = ({ name, image }) => {
             <img src={image} className='card-img-top' alt='food' />
             <div className='card-body'>
                 <h5 className='card-title'>{name}</h5>
-                <div className="container d-flex justify-content-between">
-                    <p className='card-text'>{price}</p>
-                    <p>
-                        ⭐{Math.floor(Math.random() * 5)}
-                    </p>
+                <div className='row mt-2 mb-2'>
+                    <div className='col-8'>
+                        <p className='card-text'>{price}</p>
                     </div>
-                <a href='/' className='btn btn-success'>
+                    <div className='col-4'>
+                        <p className='card-text'>
+                            ⭐{Math.floor(Math.random() * 5)}
+                        </p>
+                    </div>
+                </div>
+                <a href='/' className='btn btn-outline-success'>
                     Order Now
                 </a>
             </div>

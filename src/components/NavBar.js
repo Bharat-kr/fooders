@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const LINKS = [
     { to: "/", text: "Home" },
-    { to: "/categories", text: "Categories" },
     { to: "/cart", text: "Cart" },
 ];
 
@@ -15,7 +14,9 @@ const NavBar = () => {
                 <div className='container'>
                     <a className='navbar-brand ms-2' href='/'>
                         <img src={Logo} alt='show' width='34' height='34' />
-                        <span className='ms-2 fw-bold text-success'>Fooders</span>
+                        <span className='ms-2 fw-bold text-success'>
+                            Fooders
+                        </span>
                     </a>
                     <button
                         className='navbar-toggler'
@@ -43,6 +44,14 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                             ))}
+                            <li className='nav-item'>
+                                <a
+                                    href='/#categories'
+                                    className='nav-link active ms-sm-2 me-sm-2 m-1'
+                                >
+                                    Categories
+                                </a>
+                            </li>
                             <li className='nav-item'>
                                 <button
                                     className='btn btn-success ms-sm-2 me-sm-2 m-1'
