@@ -6,9 +6,11 @@ import Footer from "../components/Footer";
 import MainPageLayout from "../components/MainPageLayout";
 import { useOrders } from "../context/orders.context";
 import axios from "axios";
+import { useProfile } from "../context/profile.context";
 
 const Cart = () => {
   const { isOrdersLoading, loadOrders, orders } = useOrders();
+  const { profile } = useProfile();
 
   const [total, setTotal] = useState(0);
   const [placed, setPlaced] = useState(null);
@@ -55,6 +57,11 @@ const Cart = () => {
   return (
     <MainPageLayout>
       <div className="container mt-4 mb-3">
+        <p className="fs-5 ">
+          Your orders will be delivered at{" "}
+          <span className="fw-bold"> {profile.address}</span>
+        </p>
+        <hr className="dropdown-divider" />
         <h3>Your Cart</h3>
         <div className="d-flex flex-wrap justify-content-center">
           {notPlaced && notPlaced.length
@@ -89,6 +96,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
       <div className="container mt-4 mb-3">
         <h3>Past Orders</h3>
         <div className="d-flex flex-wrap justify-content-center">

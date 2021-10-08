@@ -5,14 +5,13 @@ import { useProfile } from "../context/profile.context";
 const FoodCard = ({ item }) => {
   const { profile } = useProfile();
 
-
   const createOrder = (e) => {
     e.preventDefault();
 
     axios
       .post("/orders", { user: profile.userId, foodId: item.id })
       .then((res) => {
-        console.log("fetched successfully");
+        console.log(res);
       })
       .catch((err) => console.error(err));
   };
