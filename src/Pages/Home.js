@@ -4,27 +4,35 @@ import Footer from "../components/Footer";
 import MainPageLayout from "../components/MainPageLayout";
 import SearchBox from "../components/SearchBox";
 import CallBack from "../components/CallBack";
-import * as Area from "../data/Area.json";
+import axios from "axios";
 
 const Home = () => {
-    const data = Area.meals;
-    return (
-        <MainPageLayout>
-            <SearchBox />
-            <section id='categories'>
-                <div className='container'>
-                    <h2 className='text-center mt-3 mb-3 fs-1 fw-normal'>
-                        Explore the Different Categories
-                    </h2>
-                </div>
-                {data.map((a) => {
-                    return <FoodGrid key={a.strArea} name={a.strArea} />;
-                })}
-            </section>
-            <CallBack/>
-            <Footer />
-        </MainPageLayout>
-    );
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    axios
+      .get("/foods")
+      .then((result) => {
+        setData(result.data.products);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <MainPageLayout>
+      <SearchBox />
+      <section id="categories">
+        <div className="container">
+          <h2 className="text-center mt-3 mb-3 fs-1 fw-normal">
+            Explore the Your favourite Dish
+          </h2>
+        </div>
+        {!data ? "Loading..." : <FoodGrid data={data} />}
+      </section>
+      <CallBack />
+      <Footer />
+    </MainPageLayout>
+  );
 };
 
 export default Home;
