@@ -10,7 +10,7 @@ const LINKS = [
   { to: "/cart", text: "Cart" },
 ];
 
-const NavBar = () => {
+const NavBar = ({ showAlert }) => {
   const { profile, setProfile } = useProfile();
   const login = (e) => {
     e.preventDefault();
@@ -31,11 +31,10 @@ const NavBar = () => {
             address: decodedJwt.address,
           };
           setProfile(userData);
-        } else {
-          console.log("user Not found");
+          showAlert("Logged In", "info");
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => showAlert("Invalid Credentials", "danger"));
   };
 
   const updateAddress = (e) => {
@@ -46,10 +45,12 @@ const NavBar = () => {
       .patch(`/user/${decodedJwt.userId}`, { address: e.target[0].value })
       .then((res) => {
         if (res.status === 200) {
-          console.log("updated sucessfully");
+          showAlert("Update sucessfully", "success");
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        showAlert(err.message, "danger");
+      });
   };
 
   const logout = (e) => {
@@ -57,6 +58,7 @@ const NavBar = () => {
 
     localStorage.removeItem("jwt");
     setProfile(null);
+    showAlert("Logged Out", "info");
   };
 
   const deleteAccount = (e) => {
@@ -69,9 +71,10 @@ const NavBar = () => {
         if (res.status === 200) {
           localStorage.removeItem("jwt");
           setProfile(null);
+          showAlert("Account Deleted", "success");
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => showAlert(err.message, "danger"));
   };
 
   return (

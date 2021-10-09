@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useProfile } from "../context/profile.context";
 
-const FoodCard = ({ item }) => {
+const FoodCard = ({ item, showAlert }) => {
   const { profile } = useProfile();
 
   const createOrder = (e) => {
@@ -11,7 +11,12 @@ const FoodCard = ({ item }) => {
     axios
       .post("/orders", { user: profile.userId, foodId: item.id })
       .then((res) => {
-        console.log(res);
+        if (res.status === 201) {
+          showAlert("Order Created", "success");
+        }
+        if (res.status === 204) {
+          showAlert("Same order Pls Update in cart", "warning");
+        }
       })
       .catch((err) => console.error(err));
   };
@@ -21,14 +26,16 @@ const FoodCard = ({ item }) => {
       <img src={item.img} className="card-img-top" alt="fooditem" />
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
-        <div className="row mt-2 mb-2">
-          <div className="col-8">
+        <div className="row mt-3 mb-2 align-items-baseline">
+          <div className="col-4">
             <p className="card-text">{item.price} ₹</p>
           </div>
+          <div className="col-8">
+            <button className="btn btn-outline-success" onClick={createOrder}>
+              Add to Cart
+            </button>
+          </div>
         </div>
-        <button className="btn btn-outline-success" onClick={createOrder}>
-          Add to Cart
-        </button>
       </div>
     </div>
   );

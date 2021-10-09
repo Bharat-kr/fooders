@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useOrders } from "../context/orders.context";
 
-
-const CartCard = ({ order }) => {
+const CartCard = ({ order, showAlert }) => {
   // console.log(order);
   const { loadOrders } = useOrders();
 
@@ -40,6 +39,7 @@ const CartCard = ({ order }) => {
     axios
       .delete(`/orders/${order._id}`)
       .then((res) => {
+        showAlert("Item Removed", "warning");
         loadOrders();
       })
       .catch((err) => console.error(err));
@@ -57,7 +57,7 @@ const CartCard = ({ order }) => {
             height="100"
           />
         </div>
-        <div className="col-4 d-flex align-items-center justify-content-center">
+        <div className="col-4 d-flex align-items-center">
           <h5 className="card-title">{order.food.name}</h5>
         </div>
         <div className="col-3 d-flex flex-row align-items-center">

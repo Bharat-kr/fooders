@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useOrders } from "../context/orders.context";
+import moment from "moment";
 
 const PastOrderCard = ({ order }) => {
   const { loadOrders } = useOrders();
@@ -13,7 +14,7 @@ const PastOrderCard = ({ order }) => {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log(res);
+          console.log("Order");
           loadOrders();
         }
       })
@@ -22,13 +23,34 @@ const PastOrderCard = ({ order }) => {
 
   return (
     <>
-      <div className="container rounded-5 shadow m-1 p-md-2 p-1 pe-md-4 d-flex flex-row align-items-center justify-content-between">
-        <img src={order.food.img} alt="item" width="100" height="100" />
-        <h5 className="card-title">{order.food.name}</h5>
-        <p className="number">{order.quantity}</p>
-        <p className="card-text">₹ {order.food.price * order.quantity}</p>
+      <div className="container rounded-5 shadow m-1 p-md-2 p-1 pe-md-4 ">
+        <div className="row">
+          <div className="col-2">
+            <img
+              src={order.food.img}
+              className="rounded"
+              alt="item"
+              width="100"
+              height="100"
+            />
+          </div>
+          <div className="col-3 d-flex align-items-center">
+            <h5 className="card-title">{order.food.name}</h5>
+          </div>
+          <div className="col-1 d-flex flex-row align-items-center">
+            <p className="number">{order.quantity}</p>
+          </div>
+          <div className="col-2 d-flex align-items-center justify-content-center">
+            <p className="card-text">₹ {order.food.price * order.quantity}</p>
+          </div>
+          <div className="col-4 d-flex align-items-center justify-content-center">
+            <p className="card-text">
+              {moment.utc(order.date).local().format('MMMM Do YYYY, h:mm:ss a')}
+            </p>
+          </div>
+        </div>
 
-        {order.review && order.review.length > 0 ? (
+        {/* {order.review && order.review.length > 0 ? (
           <button type="button" disabled className="btn btn-primary">
             Reviewd Already
           </button>
@@ -41,7 +63,7 @@ const PastOrderCard = ({ order }) => {
           >
             Review
           </button>
-        )}
+        )} */}
       </div>
 
       {/* Review Modal */}

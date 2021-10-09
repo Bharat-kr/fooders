@@ -2,20 +2,26 @@ import React from "react";
 
 const Alert = (props) => {
   return (
-    <div
-      className="alert alert-warning alert-dismissible fade show"
-      role="alert"
-    >
-      <i className="bi bi-check-circle-fill"></i>
-      <strong>Holy guacamole!</strong> You should check in on some of those
-      fields below.
-      <button
-        type="button"
-        className="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-      ></button>
-    </div>
+    props.alert && (
+      <div
+        className={`alert alert-${props.alert.type} text-center`}
+        role="alert"
+      >
+        {props.alert.type === "success" ? (
+          <i className="bi bi-check-circle-fill"> </i>
+        ) : null}
+        {props.alert.type === "info" ? (
+          <i className="bi bi-info-circle-fill"> </i>
+        ) : null}
+        {props.alert.type === "warning" ? (
+          <i className="bi bi-exclamation-circle-fill"> </i>
+        ) : null}
+        {props.alert.type === "danger" ? (
+          <i className="bi bi-exclamation-circle-fill"> </i>
+        ) : null}
+        {props.alert.msg}
+      </div>
+    )
   );
 };
 

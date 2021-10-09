@@ -7,9 +7,9 @@ const CallBack = () => {
       <div className="w-50 d-none d-md-flex justify-content-center align-content-center">
         <img src={image} alt="MainImage" className="MainImage" />
       </div>
-      <div className="w-auto d-flex justify-content-center align-items-end p-5 flex-column">
+      <div className="w-auto d-flex justify-content-center align-items-start align-items-md-end p-5 flex-column">
         <h6 className="bg-light rounded p-1">order Now!</h6>
-        <div className="display-4 fw-bold text-success text-end">
+        <div className="display-4 fw-bold text-success text-start text-md-end">
           Fast Delivery at Your Doorstep!
         </div>
       </div>

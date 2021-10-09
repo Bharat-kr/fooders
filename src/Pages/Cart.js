@@ -7,10 +7,19 @@ import MainPageLayout from "../components/MainPageLayout";
 import { useOrders } from "../context/orders.context";
 import axios from "axios";
 import { useProfile } from "../context/profile.context";
+import Alert from "../components/Alert";
 
 const Cart = () => {
   const { isOrdersLoading, loadOrders, orders } = useOrders();
   const { profile } = useProfile();
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({ msg: message, type: type });
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  };
 
   const [total, setTotal] = useState(0);
   const [placed, setPlaced] = useState(null);
@@ -40,14 +49,17 @@ const Cart = () => {
       let placingorders = [];
       notPlaced.forEach((element) => {
         placingorders.push(
-          axios.patch(`/orders/${element._id}`, { status: true })
+          axios.patch(`/orders/${element._id}`, {
+            status: true,
+            date: new Date(),
+          })
         );
       });
 
       axios
         .all(placingorders)
         .then((res) => {
-          console.log("Done");
+          showAlert("Order Placed", "success");
           loadOrders();
         })
         .catch((err) => console.error(err));
@@ -56,6 +68,7 @@ const Cart = () => {
 
   return (
     <MainPageLayout>
+      <Alert alert={alert} />
       <div className="container mt-4 mb-3">
         <p className="fs-5 ">
           Your orders will be delivered at{" "}
@@ -66,7 +79,13 @@ const Cart = () => {
         <div className="d-flex flex-wrap justify-content-center">
           {notPlaced && notPlaced.length
             ? notPlaced.map((order) => {
-                return <CartCard key={order._id} order={order} />;
+                return (
+                  <CartCard
+                    key={order._id}
+                    showAlert={showAlert}
+                    order={order}
+                  />
+                );
               })
             : "No orders Yet"}
         </div>
