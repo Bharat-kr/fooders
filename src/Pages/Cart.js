@@ -69,9 +69,9 @@ const Cart = () => {
   return (
     <MainPageLayout>
       <Alert alert={alert} />
-      <div className="container mt-4 mb-3">
+      <div className="container mb-3 cart">
         <p className="fs-5 ">
-          Your orders will be delivered at{" "}
+          Your orders will be delivered at
           <span className="fw-bold"> {profile.address}</span>
         </p>
         <hr className="dropdown-divider" />

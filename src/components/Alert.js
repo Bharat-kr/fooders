@@ -4,7 +4,8 @@ const Alert = (props) => {
   return (
     props.alert && (
       <div
-        className={`alert alert-${props.alert.type} text-center`}
+        className={`alert alert-${props.alert.type} text-center m-1 rounded position-fixed top-0 start-50 translate-middle-x`}
+        
         role="alert"
       >
         {props.alert.type === "success" ? (

@@ -25,27 +25,25 @@ const PastOrderCard = ({ order }) => {
     <>
       <div className="container rounded-5 shadow m-1 p-md-2 p-1 pe-md-4 ">
         <div className="row">
-          <div className="col-2">
+          <div className="col-2 d-flex align-items-center justify-content-center">
             <img
               src={order.food.img}
-              className="rounded"
+              className="rounded img-fluid"
               alt="item"
-              width="100"
-              height="100"
             />
           </div>
           <div className="col-3 d-flex align-items-center">
-            <h5 className="card-title">{order.food.name}</h5>
+            <h5 className="card-title fs-6">{order.food.name}</h5>
           </div>
-          <div className="col-1 d-flex flex-row align-items-center">
+          <div className="col d-flex flex-row align-items-center justify-content-center">
             <p className="number">{order.quantity}</p>
           </div>
-          <div className="col-2 d-flex align-items-center justify-content-center">
+          <div className="col d-flex align-items-center justify-content-center">
             <p className="card-text">₹ {order.food.price * order.quantity}</p>
           </div>
-          <div className="col-4 d-flex align-items-center justify-content-center">
+          <div className="col d-flex align-items-center justify-content-center">
             <p className="card-text">
-              {moment.utc(order.date).local().format('MMMM Do YYYY, h:mm:ss a')}
+              {moment.utc(order.date).local().format('MMMM Do YYYY')}
             </p>
           </div>
         </div>

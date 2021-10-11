@@ -11,7 +11,7 @@ const LINKS = [
 ];
 
 const NavBar = ({ showAlert }) => {
-  const { profile, setProfile } = useProfile();
+  const { profile, setProfile, loadProfile } = useProfile();
   const login = (e) => {
     e.preventDefault();
     axios
@@ -45,7 +45,9 @@ const NavBar = ({ showAlert }) => {
       .patch(`/user/${decodedJwt.userId}`, { address: e.target[0].value })
       .then((res) => {
         if (res.status === 200) {
+          localStorage.setItem("jwt", res.data.token);
           showAlert("Update sucessfully", "success");
+          loadProfile();
         }
       })
       .catch((err) => {
@@ -79,7 +81,7 @@ const NavBar = ({ showAlert }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand ms-2" href="/">
             <img src={Logo} alt="show" width="34" height="34" />

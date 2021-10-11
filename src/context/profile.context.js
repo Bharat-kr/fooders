@@ -6,7 +6,7 @@ export const ProfileProvider = ({ children }) => {
   const [profile, setProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  const loadProfile = () => {
     const token = localStorage.getItem("jwt");
     if (token) {
       const decodedJwt = JSON.parse(atob(token.split(".")[1]));
@@ -22,10 +22,16 @@ export const ProfileProvider = ({ children }) => {
       setProfile(null);
       setIsLoading(false);
     }
+  };
+
+  useEffect(() => {
+    loadProfile();
   }, []);
 
   return (
-    <ProfileContext.Provider value={{ isLoading, profile ,setProfile}}>
+    <ProfileContext.Provider
+      value={{ isLoading, profile, setProfile, loadProfile }}
+    >
       {children}
     </ProfileContext.Provider>
   );
