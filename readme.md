@@ -11,4 +11,4 @@ Run this command in client part
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Now in server par do the same steps and it will run the server on [http://localhost:8000](http://localhost:8000)
+Now in server part do the same steps and it will run the server on [http://localhost:8000](http://localhost:8000)
